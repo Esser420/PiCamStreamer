@@ -11,7 +11,7 @@ class MultiStreamerSingleton(unittest.TestCase):
 
     def test(self):
         streamer1 = Streamer("h264")
-        streamer2 = Streamer("mjpg")
+        streamer2 = Streamer("mjpeg")
         streamer3 = Streamer("yuv420")
         streamer4 = Streamer("h264", resize = "720p")
 
@@ -27,12 +27,12 @@ class MultiStreamerSingleton(unittest.TestCase):
         self.assertIsInstance(streamer3, BaseStreamer)
         self.assertIsInstance(streamer4, SplitFrameStreamer)
 
-        self.assertRaises(Exception, Streamer, "mjpg", resize = "1080p")
+        self.assertRaises(Exception, Streamer, "mjpeg", resize = "1080p")
 
         streamer4.ready_to_stop = True
-        streamer4 = Streamer("mjpg", resize = "1080p")
+        streamer4 = Streamer("mjpeg", resize = "1080p")
 
-        self.assertRaises(Exception, Streamer, "mjpg", resize = "HD")
+        self.assertRaises(Exception, Streamer, "mjpeg", resize = "HD")
 
 if __name__ == '__main__':
     unittest.main()

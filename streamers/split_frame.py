@@ -4,7 +4,7 @@ from threading import Thread, Event
 from base_streamer import BaseStreamer
 
 SPLITTER_STRINGS = {
-    "mjpg": b'\xff\xd8',
+    "mjpeg": b'\xff\xd8',
     "h264": b'\x00\x00\x00\x01'
 }
 
@@ -34,9 +34,8 @@ class SplitFrameStreamer(BaseStreamer):
     def stream_frames(self):
         while not self.ready_to_stop:
             frame = self.get_next_frame()
-            size = len(frame)
             if self.append_size:
-                self.output.write(struct.pack('<L', size))
+                self.output.write(struct.pack('<L', len(frame)))
             self.output.write(frame)
 
     def write(self, buf):

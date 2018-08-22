@@ -36,6 +36,6 @@ methods are called the ```OutputHolder``` will launch a thread for every output/
 ### Extras
 
 The Streamer classes can either be the ```BaseStreamer``` or the ```SplitFrameStreamer```.
-The ```SplitFrameStreamer``` class is used for the ```h264``` and ```mjpg``` formats.
+The ```SplitFrameStreamer``` class is used for the ```h264``` and ```mjpeg``` formats.
 The ```write``` method appends data to a buffer until a new frame is found.
 This makes it possible to query the streamer for the last frame or the next one with the ```get_last_frame``` and ```get_next_frame``` methods respectively.
