@@ -1,3 +1,7 @@
+# Deprecation Notice
+
+This project is was mostly restructured and there is a new home for it at: https://github.com/Esser50K/PiCameleon
+
 # PiCamStreamer
 An useful abstraction layer around the PiCamera Library for the RaspberryPi
 
